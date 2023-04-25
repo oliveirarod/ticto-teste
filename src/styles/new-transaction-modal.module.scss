@@ -1,0 +1,124 @@
+@import "./globals";
+
+@mixin radioBox($borderColor: transparent) {
+	height: 4rem;
+	border-radius: 0.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: border-color 0.2s;
+	cursor: pointer;
+	border: 0.1rem solid $borderColor;
+
+	.img {
+		width: 20px;
+		height: 20px;
+	}
+
+	.span {
+		display: inline-block;
+		margin-left: 1rem;
+		font-size: 1rem;
+		color: var($text-dark-grey);
+	}
+}
+
+.reactModalOverlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reactModalContent {
+  width: 100%;
+  max-width: 576px;
+  background-color: $background;
+  padding: 3rem;
+  position: relative;
+  border-radius: 0.24rem;
+
+  .reactModalClose {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    border: 0;
+    background: transparent;
+    transform: scale(1.1);
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+
+  .transactionForm {
+    .h2 {
+      color: $text-dark-grey;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .input {
+      width: 100%;
+      padding: 0 1.5rem;
+      height: 4rem;
+      border-radius: $border-radius-default;
+      border: 1px solid #d9d9d9;
+      background-color: #ececec;
+      font-weight: 400;
+      font-size: 1rem;
+
+      &::placeholder {
+        color: #a0a0a0;
+      }
+
+      & + input {
+        margin-top: 1rem;
+      }
+    }
+
+    .transactionType {
+      margin: 1rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+
+      .radioBox {
+        @include radioBox();
+      }
+
+      .greenRadioBox {
+        @include radioBox($green);
+      }
+
+      .redRadioBox {
+        @include radioBox($red);
+      }
+    }
+
+    .button[type="submit"] {
+      width: 100%;
+      padding: 0 1.5rem;
+      height: 4rem;
+      background-color: #401a9b;
+      color: $white;
+      border-radius: $border-radius-default;
+      border: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.85);
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import './globals.scss';
+
+.headerContainer {
+  background-color: $blue;
+  height: 10rem;
+
+	.headerContent {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+
+		@media (min-width: 768px) {
+			width: 90%;
+		}
+
+		.button1 {
+			font-size: 0.75rem;
+			color: $text-grey;
+			background: #401a9b;
+			border: 0;
+			padding: 0 1rem;
+			border-radius: $border-radius-default;
+			height: 3rem;
+			cursor: pointer;
+			transition: filter 0.2s;
+
+			@media (min-width: 440px) {
+				font-size: 0.875rem;
+			}
+
+			@media (min-width: 490px) {
+				font-size: 1rem;
+				padding: 0 2rem;
+			}
+
+			@media (min-width: 576px) {
+				padding: 0 3rem;
+			}
+
+			&:hover {
+				filter: brightness(1.1);
+			}
+		}
+	}
+}

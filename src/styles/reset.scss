@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #F1F5F8;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input textarea, button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
