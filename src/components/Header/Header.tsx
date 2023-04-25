@@ -1,5 +1,7 @@
-import logo from "@/assets/logo.svg";
+import Image from "next/image";
+
 import styles from "@/styles/header.module.scss";
+import logo from "../../../public/logo.svg";
 
 interface HeaderProps {
   openNewTransactionModal: () => void;
@@ -9,7 +11,7 @@ const Header = ({ openNewTransactionModal }: HeaderProps) => {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <img src={logo.src} alt="Ticto logo" />
+        <Image src={logo} alt="Ticto logo" />
 
         <div>
           <button className={styles.button1} type="button" onClick={openNewTransactionModal}>

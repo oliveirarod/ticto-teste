@@ -1,17 +1,15 @@
 import { FormEvent, useState } from "react";
+import Image from "next/image";
 
-// Libraries
 import { NumericFormat } from "react-number-format";
 import Modal from "react-modal";
 
-// Styles
-import incomeImg from "@/assets/icon-income.svg";
-import outcomeImg from "@/assets/icon-outcome.svg";
-import closeImg from "@/assets/icon-close.svg";
+import incomeImg from "../../../public/icons/icon-income.svg";
+import outcomeImg from "../../../public/icons/icon-outcome.svg";
+import closeImg from "../../../public/icons/icon-close.svg";
 import styles from "@/styles/new-transaction-modal.module.scss";
 
-// Hooks
-import { useTransactions } from "../hooks/useTransactions";
+import { useTransactions } from "@/hooks/useTransactions";
 
 Modal.setAppElement("body");
 
@@ -77,7 +75,7 @@ const NewTransactionModal = ({
         onClick={handleCloseModal}
         className={styles.reactModalClose}
       >
-        <img src={closeImg.src} alt="Fechar Modal" />
+        <Image src={closeImg} alt="Fechar Modal" />
       </button>
 
       <form className={styles.transactionForm} onSubmit={createNewTransaction}>
@@ -116,24 +114,26 @@ const NewTransactionModal = ({
           <button
             type="button"
             name="deposit"
+            aria-label="Entrada"
             onClick={() => setType("deposit")}
             className={
               type === "deposit" ? styles.greenRadioBox : styles.radioBox
             }
           >
-            <img className={styles.img} src={incomeImg.src} alt="Entrada" />
+            <Image className={styles.img} src={incomeImg} alt="Entrada" />
             <span className={styles.span}>Entrada</span>
           </button>
 
           <button
             type="button"
             name="withdraw"
+            aria-label="Saída"
             onClick={() => setType("withdraw")}
             className={
               type === "withdraw" ? styles.redRadioBox : styles.radioBox
             }
           >
-            <img className={styles.img} src={outcomeImg.src} alt="Saida" />
+            <Image className={styles.img} src={outcomeImg} alt="Saida" />
             <span className={styles.span}>Saída</span>
           </button>
         </div>

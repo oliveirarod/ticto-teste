@@ -1,4 +1,3 @@
-// Hooks
 import {
   createContext,
   useEffect,
@@ -7,7 +6,6 @@ import {
   ReactNode,
 } from "react";
 
-// Models
 import { Transaction } from "@/interfaces/Transaction";
 import TransactionService from "@/models/Transaction";
 

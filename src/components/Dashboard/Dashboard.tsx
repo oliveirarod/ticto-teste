@@ -1,6 +1,7 @@
+import Cards from "@/components/Dashboard/Cards";
+import Table from "@/components/Dashboard/Table";
+
 import styles from '@/styles/dashboard.module.scss';
-import Cards from "./Cards";
-import Table from "./Table";
 
 const Dashboard = () => {
   return (

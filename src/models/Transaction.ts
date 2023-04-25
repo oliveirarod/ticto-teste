@@ -1,4 +1,5 @@
 import { Transaction } from "./../interfaces/Transaction";
+import { v4 as uuidv4 } from "uuid";
 
 const transactions = [
 	{
@@ -30,7 +31,7 @@ class TransactionService {
   // Simulates a post request
   post = (url: string, newData: Omit<Transaction, "id">) => {
     return new Promise<Transaction>((res) => {
-      res({ ...newData, id: 'abc' });
+      res({ ...newData, id: uuidv4() });
     });
   };
 
